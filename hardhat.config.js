@@ -26,6 +26,14 @@ module.exports = {
 			accounts: [PRIVATE_KEY],
 		},
 	},
+	gasReporter: {
+		enabled: false,
+		outputFile: "gas-report.txt",
+		noColors: true,
+		currency: "USD",
+		coinmarketcap: COINMARKETCAP_API_KEY,
+		//token: "MATIC",
+	},
 	namedAccounts: {
 		deployer: {
 			default: 0,
