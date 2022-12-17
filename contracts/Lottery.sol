@@ -112,6 +112,8 @@ contract Lottery is VRFConsumerBaseV2, AutomationCompatibleInterface {
 			NUM_WORDS
 		);
 
+		// Redundant: since the VRFCoordinatorV2Mock already emits the requestId on RandomWordsRequested event
+		// when requestRandomWords is called
 		emit RequestedLotteryWinner(requestId);
 	}
 
@@ -166,5 +168,9 @@ contract Lottery is VRFConsumerBaseV2, AutomationCompatibleInterface {
 
 	function getInterval() public view returns (uint256) {
 		return i_interval;
+	}
+
+	function getSubscriptionId() public view returns (uint64) {
+		return i_subscriptionId;
 	}
 }
